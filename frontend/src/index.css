@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🎮 TEMA GAMER CYBERPUNK 🎮 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', 'Courier', monospace;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 100%);
+  color: #00ff88;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Colores Cyberpunk */
+:root {
+  --color-dark: #0d0d0d;
+  --color-darker: #1a1a2e;
+  --color-neon-green: #00ff88;
+  --color-neon-cyan: #00ffff;
+  --color-neon-purple: #d500f9;
+  --color-neon-pink: #ff006e;
+  --color-neon-yellow: #ffff00;
+  --color-gold: #ffd700;
+}
+
+/* Efecto Glow Neon */
+.neon-glow {
+  text-shadow: 0 0 10px var(--color-neon-green), 
+               0 0 20px var(--color-neon-cyan),
+               0 0 30px var(--color-neon-purple);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(213, 0, 249, 0.6),
+              0 0 40px rgba(213, 0, 249, 0.3);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.6),
+              0 0 40px rgba(0, 255, 136, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6),
+              0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+/* Input Styles */
+input, textarea, select {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 2px solid var(--color-neon-purple) !important;
+  color: var(--color-neon-green) !important;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-neon-cyan) !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon-purple);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
