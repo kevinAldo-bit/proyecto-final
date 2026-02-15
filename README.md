@@ -1,264 +1,136 @@
-# Proyecto Final MERN Stack
+Proyecto Final – MERN Stack
+Descripción
 
-## 🚀 Descripción
+Este proyecto es una aplicación web para la gestión de tareas (To-Do List) desarrollada como proyecto final utilizando el stack MERN.
+La aplicación permite a los usuarios registrarse, iniciar sesión y administrar sus propias tareas de forma segura.
 
-Proyecto completo de una aplicación web para gestionar tareas (To-Do List) desarrollado con el **MERN Stack**:
-- **M**ongoDB: Base de datos NoSQL
-- **E**xpress: Framework backend
-- **R**eact: Librería frontend
-- **N**ode.js: Runtime de JavaScript
+El objetivo principal del proyecto es poner en práctica el desarrollo full stack, trabajando tanto el backend como el frontend y la comunicación entre ambos.
 
-## ✨ Características principales
+Tecnologías utilizadas:
 
-✅ Autenticación de usuarios con JWT
-✅ Registrarse e iniciar sesión
-✅ Crear, editar y eliminar tareas
-✅ Cambiar estado y prioridad de tareas
-✅ Interfaz moderna con Tailwind CSS
-✅ Diseño responsive (funciona en mobile, tablet y desktop)
-✅ Protección de rutas (solo usuarios autenticados pueden acceder)
+MongoDB (base de datos)
 
-## 📁 Estructura del Proyecto
+Express y Node.js (backend)
 
-```
-proyecto-final/
-├── backend/
-│   ├── config/
-│   │   └── db.js (Conexión a MongoDB)
-│   ├── controllers/
-│   │   ├── authController.js (Login, registro)
-│   │   └── taskController.js (CRUD de tareas)
-│   ├── middleware/
-│   │   └── authMiddleware.js (Verificar JWT)
-│   ├── models/
-│   │   ├── User.js (Esquema de usuario)
-│   │   └── Task.js (Esquema de tarea)
-│   ├── routes/
-│   │   ├── authRoutes.js
-│   │   └── taskRoutes.js
-│   ├── index.js (Servidor principal)
-│   ├── package.json
-│   └── .env (Variables de entorno)
-│
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── Navbar.jsx
-    │   │   ├── Layout.jsx
-    │   │   └── ProtectedRoute.jsx
-    │   ├── pages/
-    │   │   ├── Login.jsx
-    │   │   ├── Register.jsx
-    │   │   └── Dashboard.jsx
-    │   ├── context/
-    │   │   └── AuthContext.jsx (Estado global de autenticación)
-    │   ├── api/
-    │   │   └── axiosConfig.js (Configuración de peticiones HTTP)
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   ├── index.css
-    │   └── .env (Variables de entorno)
-    ├── index.html
-    ├── package.json
-    ├── vite.config.js
-    ├── tailwind.config.js
-    └── postcss.config.js
-```
+React (frontend)
 
-## 🛠️ Instalación
+Tailwind CSS (estilos)
 
-### Requisitos previos
+Funcionalidades
 
-- Node.js (v14 o superior)
-- npm o yarn
-- MongoDB (Local o Atlas - servicio en la nube)
+Registro e inicio de sesión de usuarios
 
-### Paso 1: Instalar dependencias del Backend
+Autenticación mediante JWT
 
-```bash
+Crear, editar y eliminar tareas
+
+Cambiar el estado y la prioridad de las tareas
+
+Protección de rutas (solo usuarios autenticados)
+
+Interfaz responsiva adaptable a distintos dispositivos
+
+Estructura del proyecto
+
+El proyecto está dividido en dos partes principales:
+
+Backend: maneja la lógica del servidor, autenticación, API y conexión a la base de datos.
+
+Frontend: contiene la interfaz de usuario y la interacción con la API.
+
+backend/
+  config/
+  controllers/
+  models/
+  routes/
+  middleware/
+  index.js
+
+frontend/
+  src/
+    components/
+    pages/
+    context/
+    api/
+  index.html
+
+Instalación y configuración
+Requisitos
+
+Node.js
+
+npm
+
+MongoDB (local o en la nube)
+
+Backend
+
+Entrar a la carpeta del backend:
+
 cd backend
 npm install
-```
 
-### Paso 2: Configurar variables de entorno del Backend
 
-Edita el archivo `backend/.env`:
+Crear el archivo .env y configurar:
 
-```
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/proyecto-final
-JWT_SECRET=tu_clave_secreta_super_segura_123456789
-FRONTEND_URL=http://localhost:5173
-```
+JWT_SECRET=clave_secreta
 
-**Nota:** Si usas MongoDB Atlas:
-```
-MONGODB_URI=mongodb+srv://tu_usuario:tu_password@cluster.mongodb.net/proyecto-final
-```
 
-### Paso 3: Instalar dependencias del Frontend
+Ejecutar el servidor:
 
-```bash
+npm run dev
+
+Frontend
+
+Entrar a la carpeta del frontend:
+
 cd frontend
 npm install
-```
 
-### Paso 4: Configurar variables de entorno del Frontend
 
-El archivo `frontend/.env` ya está configurado correctamente:
+Configurar el archivo .env:
 
-```
 VITE_API_URL=http://localhost:5000/api
-```
 
-## 🚀 Ejecutar la aplicación
 
-### Terminal 1: Ejecutar el Backend
+Ejecutar la aplicación:
 
-```bash
-cd backend
 npm run dev
-```
 
-Deberías ver:
-```
-✅ Conectado a MongoDB exitosamente
-🚀 Servidor ejecutándose en http://localhost:5000
-```
+Uso de la aplicación
 
-### Terminal 2: Ejecutar el Frontend
+Abrir el navegador en http://localhost:5173
 
-```bash
-cd frontend
-npm run dev
-```
+Registrar un nuevo usuario
 
-Deberías ver:
-```
-VITE v4.x.x  ready in xxx ms
+Iniciar sesión
 
-➜  Local:   http://localhost:5173/
-```
+Acceder al panel principal
 
-## 📱 Usar la aplicación
+Crear, editar o eliminar tareas según sea necesario
 
-1. Abre en tu navegador: **http://localhost:5173**
-2. Haz click en "Regístrate aquí" para crear una nueva cuenta
-3. Completa el formulario con:
-   - Nombre
-   - Email
-   - Contraseña (mínimo 6 caracteres)
-4. Una vez registrado, verás el **Dashboard** con tus tareas
-5. Crea tareas haciendo click en "➕ Nueva Tarea"
-6. Edita o elimina tareas según necesites
+Cada usuario solo puede ver y administrar sus propias tareas.
 
-## 🔐 Seguridad
+Seguridad
 
-- Las contraseñas se encriptan con **bcryptjs**
-- Los tokens JWT expiran en 7 días
-- Las rutas están protegidas - solo usuarios autenticados pueden acceder
-- El middleware de autenticación verifica el token en cada solicitud
+Las contraseñas se almacenan cifradas
 
-## 📡 Endpoints de la API
+Se utilizan tokens JWT para la autenticación
 
-### Autenticación
+Las rutas protegidas verifican el token en cada petición
 
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| POST | `/api/auth/registro` | Registrar nuevo usuario |
-| POST | `/api/auth/login` | Iniciar sesión |
-| GET | `/api/auth/perfil` | Obtener datos del usuario (requiere token) |
+Las variables sensibles se manejan mediante archivos .env
 
-### Tareas
+Notas finales
 
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| GET | `/api/tareas` | Obtener todas las tareas del usuario |
-| POST | `/api/tareas` | Crear nueva tarea |
-| GET | `/api/tareas/:id` | Obtener una tarea específica |
-| PUT | `/api/tareas/:id` | Actualizar una tarea |
-| DELETE | `/api/tareas/:id` | Eliminar una tarea |
+Este proyecto fue desarrollado con fines académicos y de aprendizaje, aplicando conceptos de:
 
-## 🧪 Probar con Postman/cURL
+Programación backend y frontend
 
-### Ejemplo 1: Registrarse
+Autenticación de usuarios
 
-```bash
-curl -X POST http://localhost:5000/api/auth/registro \
-  -H "Content-Type: application/json" \
-  -d '{"nombre":"Juan","email":"juan@example.com","contraseña":"123456"}'
-```
+Arquitectura cliente-servidor
 
-### Ejemplo 2: Iniciar sesión
-
-```bash
-curl -X POST http://localhost:5000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"juan@example.com","contraseña":"123456"}'
-```
-
-### Ejemplo 3: Crear tareas (reemplaza TOKEN con el token recibido)
-
-```bash
-curl -X POST http://localhost:5000/api/tareas \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer TOKEN" \
-  -d '{"titulo":"Mi primera tarea","descripcion":"Descripción de la tarea","prioridad":"alta"}'
-```
-
-## 🎨 Personalización
-
-### Cambiar colores
-
-Edita `frontend/tailwind.config.js` para modificar los colores de la aplicación.
-
-### Cambiar nombre de la aplicación
-
-- Frontend: Edita el título en `frontend/index.html`
-- Navbar: Edita `frontend/src/components/Navbar.jsx`
-
-## 📝 Notas importantes
-
-- **No commits con secretos:** Nunca commitas tu `.env` con la clave JWT real
-- **MongoDB Connection:** Asegúrate de que MongoDB esté corriendo antes de iniciar el backend
-- **Puerto 5173:** El frontend usa este puerto, asegúrate de que esté disponible
-- **Puerto 5000:** El backend usa este puerto, asegúrate de que esté disponible
-
-## 🐛 Solución de problemas
-
-### "Cannot find module 'express'"
-```bash
-cd backend && npm install
-```
-
-### "Cannot find module 'react'"
-```bash
-cd frontend && npm install
-```
-
-### "MongoDB connection failed"
-- Verifica que MongoDB esté corriendo
-- Verifica la URI en `backend/.env`
-- Si usas MongoDB Atlas, agrega tu IP a la whitelist
-
-### "Port 5000 is already in use"
-```bash
-# Windows
-netstat -ano | findstr :5000
-
-# Linux/Mac
-lsof -i :5000
-```
-
-## 📚 Recursos
-
-- [React Documentation](https://react.dev)
-- [Express.js](https://expressjs.com)
-- [MongoDB](https://www.mongodb.com)
-- [Mongoose](https://mongoosejs.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [JWT](https://jwt.io)
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y puede ser usado libremente.
+Consumo de APIs REST
